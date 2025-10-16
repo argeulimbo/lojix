@@ -3,11 +3,13 @@ package com.br.lojix.service.impl;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.br.lojix.model.Fornecedor;
 import com.br.lojix.repository.FornecedorRepository;
 import com.br.lojix.service.FornecedorService;
 
+@Service
 public class FornecedorServiceImpl implements FornecedorService {
 	
 	@Autowired

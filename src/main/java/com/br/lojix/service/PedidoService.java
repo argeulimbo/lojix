@@ -1,10 +1,7 @@
 package com.br.lojix.service;
 
-import org.springframework.stereotype.Service;
-
 import com.br.lojix.model.Pedido;
 
-@Service
 public interface PedidoService {
 	
 	Pedido findById(Long id);

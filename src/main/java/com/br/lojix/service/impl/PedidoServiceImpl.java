@@ -3,11 +3,13 @@ package com.br.lojix.service.impl;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.br.lojix.model.Pedido;
 import com.br.lojix.repository.PedidoRepository;
 import com.br.lojix.service.PedidoService;
 
+@Service
 public class PedidoServiceImpl implements PedidoService {
 	
 	@Autowired
