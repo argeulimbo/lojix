@@ -3,11 +3,29 @@ package com.br.lojix.model;
 import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_fornecedor")
 public class Fornecedor {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(nullable = false, length = 255)
 	private String name;
+	
+	@Column(nullable = false, length = 20)
 	private String documento;
+	
+	@OneToMany(mappedBy = "fornecedorPedido")
 	private List<Pedido> listPedido;
 	
 	public Fornecedor() {}

@@ -2,20 +2,50 @@ package com.br.lojix.model;
 
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.br.lojix.model.enums.Status;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_pedido")
 public class Pedido {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(nullable = false)
 	private Integer numero;
+	
+	@Column(nullable = false)
 	private String descricaoItem;
+	
+	@Column(nullable = false)
 	private Integer quantidadeItem;
+	
+	@Column(nullable = false)
 	private Double valorUnitarioItem;
 	
+	@ManyToOne
+	@Autowired
 	private Produto produtoPedido;
 	
+	@ManyToOne
+	@Autowired
 	private Fornecedor fornecedorPedido;
 	
+	@Enumerated(EnumType.STRING)
+	@Column
 	private Status statusPedido;
 	
 	public Pedido() {}

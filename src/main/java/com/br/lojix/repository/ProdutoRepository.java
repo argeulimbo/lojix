@@ -1,5 +1,9 @@
 package com.br.lojix.repository;
 
-public interface ProdutoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.br.lojix.model.Produto;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 }

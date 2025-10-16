@@ -1,5 +1,9 @@
 package com.br.lojix.repository;
 
-public interface FornecedorRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.br.lojix.model.Fornecedor;
+
+public interface FornecedorRepository extends JpaRepository<Fornecedor, Long> {
 
 }

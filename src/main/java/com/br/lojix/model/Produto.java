@@ -2,13 +2,35 @@ package com.br.lojix.model;
 
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_produto")
 public class Produto {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(nullable = false, length = 255)
 	private String name;
+	
+	@Column(nullable = false)
 	private Integer quantidade;
+	
+	@Column
 	private Double valorUnitario;
 	
+	@Autowired
+	@ManyToOne
 	private Pedido pedido;
 
 	public String getName() {
