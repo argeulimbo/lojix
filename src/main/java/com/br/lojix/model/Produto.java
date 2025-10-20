@@ -1,16 +1,10 @@
 package com.br.lojix.model;
 
-import java.util.Objects;
-
+import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_produto")
@@ -32,6 +26,13 @@ public class Produto {
 	@Autowired
 	@ManyToOne
 	private Pedido pedido;
+
+    @Autowired
+    @ManyToMany
+    @JoinTable(name = "tb_pedido_produto",
+            joinColumns = @JoinColumn(name = "pedido_id"),
+            inverseJoinColumns = @JoinColumn(name = "produto_id"))
+    private List<Produto> produtos;
 
 	public String getName() {
 		return name;
