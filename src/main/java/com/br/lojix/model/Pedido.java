@@ -35,9 +35,9 @@ public class Pedido {
 	
 	@Column(nullable = false)
 	private Double valorUnitarioItem;
-	
-	@ManyToOne
-	@Autowired
+
+    @ManyToOne
+    @Autowired
 	private Produto produtoPedido;
 	
 	@ManyToOne
