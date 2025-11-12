@@ -14,7 +14,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	@Override
+    @Override
+    public Usuario findByUser(Usuario user) {
+
+    }
+
+    @Override
 	public Usuario findById(Long id) {
 		return usuarioRepository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
