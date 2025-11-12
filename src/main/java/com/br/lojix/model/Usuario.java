@@ -128,12 +128,5 @@ public abstract class Usuario implements Serializable {
 		Usuario other = (Usuario) obj;
 		return Objects.equals(cpf,  other.cpf) && Objects.equals(id, other.id);
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
