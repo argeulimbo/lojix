@@ -31,6 +31,10 @@ public class UserSS implements UserDetails {
 		return authorities;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
 	@Override
 	public String getPassword() {
 		return senha;
